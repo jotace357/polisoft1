@@ -1,0 +1,468 @@
+body{
+	overflow: auto;
+	background-image: url(img/portada.jpg);
+	background-size: cover;
+}
+
+h1{
+	color: white;
+	font-weight: normal;
+	font-size: 20px;
+	font-family: 'Montserrat', sans-serif;
+	text-align: center;
+}
+
+h2{
+	color: white;
+	font-weight: normal;
+	font-size: 20px;
+	font-family: 'Montserrat', sans-serif;
+	text-align: left;
+}
+
+h3{
+	color: white;
+	font-weight: normal;
+	font-size: 20px;
+	font-family: 'Montserrat', sans-serif;
+	text-align: center;
+}
+
+h4{
+	font-family: 'Montserrat', sans-serif;
+	font-size: 20px;
+	text-align: center;
+}
+
+h5{
+	color: white;
+	font-family: 'Montserrat', sans-serif;
+	font-size: 20px;
+	text-align: left;
+	font-weight: bold;
+}
+
+p{
+	color: red;
+	font-weight: normal;
+	font-size: 18px;
+	font-family: 'Montserrat', sans-serif;
+	text-align: center;
+}
+
+a{
+	text-align: center;
+	text-decoration: none;
+}
+
+div{
+	font-family: 'Montserrat', sans-serif;
+}
+
+/*input registros*/
+input{
+	width: 350px;
+	padding: 10px;
+	border-radius: 6px;
+	font-family: 'Montserrat', sans-serif;
+	background-color: inherit;
+  border-color: #0062cc;
+	margin-left: auto;
+	margin-right: auto;
+	display: block;
+}
+
+/*
+.noticias{
+	width: 450px;
+	height: 250px;
+	background: #0069d9;
+	margin-left: auto;
+	margin-right: auto;
+	padding: 10px;
+	border-radius: 3px;
+	background-image: url(img/coronavirus.jpg);
+	background-size: cover;
+}
+*/
+
+.form-group{
+	margin-top: 10px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.form-control{
+	margin-top: 10px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.btn btn-primary{
+	margin-left: auto;
+	margin-right: auto;
+}
+
+/*Botones principales*/
+
+.button{
+	width: 350px;
+	padding: 12px;
+	border-radius: 4px;
+	font-family: 'Montserrat', sans-serif;
+	color: #fff;
+  background-color: #0069d9;
+  border-color: #0062cc;
+	margin: 5px;
+	margin-left: auto;
+	margin-right: auto;
+	display: block;
+}
+
+.button2{
+	width: 350px;
+	padding: 12px;
+	border-radius: 2px;
+	font-family: 'Montserrat', sans-serif;
+	color: #0069d9;
+  background-color: #fff;
+  border-color: #0062cc;
+	margin: 15px;
+	margin-left: auto;
+	margin-right: auto;
+	display: block;
+}
+
+.form-group{
+	margin-bottom: 10px;
+}
+
+/* Encabezados*/
+.encabezados{
+	background-color: #0069d9;
+	padding: 1px;
+	border-color: #0062cc;
+}
+
+
+tabla{
+	border: 2px solid red;
+}
+
+.jumbotron{
+	margin-top: 100px;
+}
+
+/* Container HOME*/
+.container{
+	width: 450px;
+	background-color: #D4E6F1;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 25px;
+	padding: 2rem 0 1rem;
+	border-top: solid .4rem #0069d9;
+	border-bottom: solid .4rem #0069d9;
+	margin-bottom: 1rem;
+	border-radius: 3px;
+}
+
+.form__top h2{
+	color: #0069d9;
+	font-size: 18px;
+	font-family: 'Montserrat', sans-serif;
+}
+
+.form__reg{
+	padding: 0 1rem;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	margin-left: auto;
+	margin-right: auto;
+	width: 100%;
+}
+
+/*Agrego estilos para atenciones.html */
+
+.divatenciones{
+    display: block;
+    text-align: center;
+}
+
+.sortable{
+	width: auto;
+    display: inline-block;
+    margin: auto;
+	border-collapse: collapse;
+}
+
+.sortable tr, th, td{
+  padding: 10px;
+  text-align: center;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: normal;
+  font-size: 14px;
+  border: 1px solid;
+  border-color: #0069d9;
+  }
+
+.sortable tr:nth-child(even){
+  background-color: #eee;
+}
+
+.sortable tr:nth-child(odd){
+ background-color: #fff;
+}
+
+.sortable th{
+  background-color:  #0069d9;
+  color: white;
+}
+
+
+/*Agrego estilos para reservas.html */
+
+div.form-uno{
+    display: block;
+    text-align: center;
+}
+
+form-uno{
+    display: inline-block;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: left;
+}
+
+.form-uno select{
+  padding: 10px;
+  text-align: center;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: normal;
+  font-size: 14px;
+  border-radius: 6px;
+  background-color: white;
+  border-color: #0062cc;
+}
+
+/*Solucionar el scrollbar - QUEDA VISIBLE SIEMPRE*/
+
+body.over{
+	overflow-y: scroll;
+}
+
+/*Botones para exportar e imprimir*/
+
+.button3{
+	width: 150px;
+	padding: 12px;
+	border-radius: 6px;
+	font-family: 'Montserrat', sans-serif;
+	color: #0069d9;
+	background-color: #fff;
+	margin: 20px;
+	margin-left: auto;
+	margin-right: auto;
+	display: block;
+}
+
+.button3:hover{
+  color: #fff;
+  background-color: #0069d9;
+}
+
+/*Agrego estilos para infoatenciones.html */
+
+.sortable2{
+	width: auto;
+    display: inline-block;
+    margin: auto;
+	border-collapse: collapse;
+}
+
+.sortable2 tr, td{
+  padding: 10px;
+  text-align: center;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: normal;
+  font-size: 14px;
+  border: 1px solid;
+  border-color: #0069d9;
+  }
+
+.sortable2 tr:nth-child(even){
+  background-color: #eee;
+}
+
+.sortable2 tr:nth-child(odd){
+ background-color: #fff;
+}
+
+.sortable2 th{
+  background-color:  #0069d9;
+  color: white;
+}
+
+/*Agrego estilos para cancelar.html */
+
+.sortable3{
+	display: inline-block;
+    margin: auto;
+	border-collapse: collapse;
+}
+
+.sortable3 td, tr,{
+  width: 100%;
+  padding: 10px;
+  text-align: center;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: normal;
+  font-size: 14px;
+  border: 1px solid;
+  border-color: #0069d9;
+  color: black;
+  background-color:
+  }
+
+.sortable3 tr:nth-child(even){
+  background-color: #eee;
+}
+
+.sortable3 tr:nth-child(odd){
+  background-color: #fff;
+}
+
+.divnuevo{
+  width: 100%;
+	display: block;
+  text-align: center;
+}
+
+.divnuevo1{
+  width: 100%;
+	display: inline;
+  text-align: left;
+}
+
+.divnuevo2{
+  width: 100%;
+	display: block;
+  text-align: left;
+}
+
+/*
+#formcancel{
+    margin: auto;
+	border-collapse: collapse;
+	text-align: center;
+	font-family: 'Montserrat', sans-serif;
+	font-weight: normal;
+	font-size: 14px;
+}
+
+#radiobot{
+  position: relative;
+ }
+ */
+
+ /* footer */
+
+*{
+	box-sizing: border-box;
+	font-family: 'Montserrat', sans-serif;
+}
+
+footer {
+	width: 100%;
+	background: #0080FF;
+	color: white;
+}
+
+.cont-all{
+	width: 100%;
+	max-width: 1200px;
+	margin: auto;
+	height: 140px;
+	margin-top: 155px;
+
+}
+
+.cont-gral{
+	display: flex;
+}
+
+.columna1{
+	max-width: 600px;
+	margin-left: 10px;
+}
+
+.columna1 h1{
+	font-size: 22px;
+	margin-left: 10px;
+}
+
+.columna1 p{
+	color: white;
+	font-size: 14px;
+	margin-left: 10px;
+	margin-top: 20px;
+}
+
+.columna2{
+	max-width: 1200px;
+	margin-left: 20px;
+
+}
+
+.columna2 h1{
+	font-size: 20px;
+	margin-left: 25px;
+	margin-right: 10px;
+}
+
+.fila{
+	width: 10px;
+	margin-top: 20px;
+	display: inline;
+}
+
+.fila img{
+	width: 35px;
+	height: 35px;
+	margin-left: 20px;
+	margin-top: 15px;
+}
+
+.fila label{
+	margin-top: 10px;
+	margin-left: 10px;
+}
+
+.cont-pie{
+	width: 100%;
+	padding: 10px;
+	display: flex;
+	justify-content: space-between;
+	background: #0000FF;
+
+
+}
+
+.copyright {
+	max-width: 600px;
+	margin-left: 10px;
+}
+
+.copyright a{
+	color: #FFFFFF;
+}
+
+.info{
+	max-width: 600px;
+	margin-right: 10px;
+}
+
+.info a{
+	color: #FFFFFF;
+}

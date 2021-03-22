@@ -1,0 +1,67 @@
+{% extends "layout.html" %}
+
+{% block content %}
+		<title> Registro de Usuario </title>
+
+		<div class="encabezados">
+			<h1>Por favor, complete los siguientes campos.</h1>
+			<h3>Después de completar el registro, podrá iniciar sesión con su número de documento y la contraseña que usted haya elegido.</h3>
+		</div>
+
+		<form method="post" action="{{ url_for ('registro') }}">
+			<div class="form-group">
+				<label for="ingreso nombres"></label>
+				<input type="text" class="form-control" id="nombres" name="names" placeholder="Nombres" required>
+			</div>
+
+			<div class="form-group">
+				<label for="ingreso apellidos"></label>
+				<input type="text" class="form-control" id="apellidos" name="lastnames" placeholder="Apellidos " required>
+			</div>
+
+			<div class="form-group">
+				<label for="ci"></label>
+				<input type="text" class="form-control" id="ci" name="cedula" placeholder="C.I sin puntos ni guiones" required>
+			</div>
+
+			<div class="form-group">
+				<label for="dire"></label>
+				<input type="text" class="form-control" id="dire" name="direc" placeholder="Ingrese su dirección" required>
+			</div>
+
+			<div class="form-group">
+				<label for="tel1"></label>
+				<input type="text" class="form-control" id="tel1" name="telm"placeholder="Telefono móvil" required>
+			</div>
+
+			<div class="form-group">
+				<label for="tel2"></label>
+				<input type="text" class="form-control" id="tel2" name="tel" placeholder="Telefono fijo">
+			</div>
+
+			<div class="form-group">
+				<label for="exampleInputEmail1"></label>
+				<input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name ="correo" placeholder="Email" required>
+			</div>
+
+			<div class="form-group">
+				<label for="exampleInputPassword1"></label>
+				<input type="password" class="form-control" id="exampleInputPassword1" name="contraseña" placeholder="Contraseña" required>
+			</div>
+
+			<div class="form-group">
+				<label for="exampleInputPassword1"></label>
+				<input type="password" class="form-control" id="exampleInputPassword1" name="confcontraseña" placeholder="Confirme su contraseña" required>
+			</div>
+
+			<p style="color:hsl(0,100%,50%);"> {{ reguserror }} </p>
+			<div>
+
+				<input type="submit" class="button" value="Registrarme">
+			</div>
+
+			<div>
+				<a class="button" href="home" role="button">Volver a la página principal</a>
+			</div>
+		</form>
+{% endblock %}

@@ -1,0 +1,50 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+	<title> Datos de Usuario </title>
+
+	<div class="encabezados">
+		<h1> Modificar mis datos </h1>
+		<h3> Actualice sus datos personales en los campos que aparecen a continuación: </h3>
+	</div>
+
+	<h3><strong style="color:hsl(145, 63%, 49%);"> {{ editok }}</strong></h3>
+
+	<form method="post" action="{{ url_for ('editar') }}">
+		<div class="form-group">
+			<input type="text" class="form-control" id="exampleInputPassword1" name="modname" value= {{ dataname }} placeholder="nombre" required>
+		</div>
+
+		<div class="form-group">
+			<input type="text" class="form-control" id="exampleInputPassword1" name="modlastname" value= {{ datalastname }} required>
+		</div>
+
+		<div class="form-group">
+			<input type="text" class="form-control" id="exampleInputPassword1" name="moddni" value= {{ datadni }} required>
+		</div>
+
+		<div class="form-group">
+			<input type="text" class="form-control" id="exampleInputPassword1" name="modadd" value= {{ dataaddress}} required>
+		</div>
+
+		<div class="form-group">
+			<input type="text" class="form-control" id="exampleInputPassword1" name="modmovil" value= {{ datamovil }} required>
+		</div>
+
+		<div class="form-group">
+			<input type="text" class="form-control" id="exampleInputPassword1" name="modphone" value= {{ dataphone }} required>
+		</div>
+
+		<div class="form-group">
+			<input type="text" class="form-control" id="exampleInputPassword1" name="modemail" value= {{ dataemail }} required>
+		</div>
+		<div>
+			<input type="submit" class="button" value="Actualizar">
+		</div>
+		<div>
+			<a class="button" href="servicios" role="button">Volver a Servicios</a>
+		</div>
+	</form>
+
+{% endblock %}

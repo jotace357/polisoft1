@@ -1,0 +1,94 @@
+{% extends "layout.html" %}
+
+
+{% block content %}
+<!DOCTYPE html>
+	<html lang="en" dir="ltr">
+		<body>
+			{% if not is_login %}
+			<div class="encabezados">
+				<h1 class="display-4">¡Bienvenidos!</h1>
+				<h1 class="display-4">Sistema de Gestión para Políclinicas y Centros de Salud</h1>
+  			<h3 class="lead">Para tener una mejor experiencia en el sitio es necesario registrarse. Si ya lo ha hecho, debe Iniciar Sesión.</h3>
+			</div>
+
+			<div class="container">
+
+				<form class="form__reg" method="post">
+					<a class="button" href="registro" placeholder="&#128100;" role="button">Registrarme</a>
+					<a class="button" href="iniciar_sesion" role="button">Iniciar Sesión</a>
+
+					<a class="button2" href="administradores">Administradores</a>
+				</form>
+			</div>
+
+		<!--
+			<div class="noticias">
+				<h5>Noticias del día:</h5>
+				<h5>Plan Nacional Coronavirus</h5>
+				<a href="https://www.gub.uy/ministerio-salud-publica/coronavirus"><h5>Información oficial del Ministerio de Salud Pública en coordinación con la OMS</h5></a>
+			</div>
+		-->
+			{% endif %}
+			{%if is_login and not is_login_adm %}
+			<div class="jumbotron">
+				<a class="button" href="servicios" role="button">Volver a Servicios</a>
+				<br>
+				<a class="button" href="/cerrar_sesion">Cerrar Sesión</a>
+			</div>
+			{% endif %}
+			{%if is_login_adm %}
+				<h1>En este momento está logueado en el sistema como Administrador</h1>
+				<a class="button" href="infousuario" role="button">Volver</a>
+				<a class="button" href="/cerrar_sesion_admin">Cerrar Sesión</a>
+
+			{% endif %}
+		</body>
+
+		<footer>
+		  <div class="cont-all">
+		   <div class="cont-gral">
+			   <div class="columna1">
+				  <h1>Sobre nosotros</h1>
+
+				  <p>
+					  Nuestra misión es poner a disposición de la comunidad los más altos estándares de calidad en la prestación de servicios de salud. A lo largo de sus más de 80 años de historia, el espíritu que nos ha caracterizado y distinguido surge del ejercicio de integrar la excelencia profesional y técnica con el trato preferencial que se le brinda al paciente, basado en la premisa básica del respeto por su dignidad humana.
+				  </p>
+			   </div>
+
+			   <div class="columna2">
+				  <h1>Información de contacto</h1>
+
+			      <div class="fila">
+			    	  <img src="/static/img/home.png">
+			    	  <label> Dirección 1122 </label>
+			      </div>
+
+			      <div class="fila">
+			    	  <img src="/static/img/tel.png">
+			    	  <label> +598 90 155 201 </label>
+			      </div>
+
+			      <div class="fila">
+			    	  <img src="/static/img/mail.png">
+			    	  <label> correo </label>
+			      </div>
+
+			   </div>
+
+		   </div>
+
+		  </div>
+
+		  <div class="cont-pie">
+			     <div class="copyright">
+				    © 2020 Todos los Derechos Reservados | <a href="">TribuTech</a>
+			     </div>
+
+			     <div class="info">
+				  <a href="">Informacion Compañia</a> | <a href="">Politicas y Privacidad</a> | <a href="">Terminos y Condiciones</a>
+	      </div>
+
+	  </footer>
+	</html>
+{% endblock %}

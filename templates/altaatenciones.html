@@ -1,0 +1,58 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+	<title> Ingreso de Información </title>
+	{% if is_login_adm %}
+	<h1> Administrador: {{session["admname"]}} </h1>
+	<div class="encabezados">
+			<h1>Ingreso de Atenciones para el Usuario</h1>
+			<h3>Campos para registrar información de los Servicios</h3>
+	</div>
+	<h3 style="color:hsl(145, 63%, 49%);"><strong>{{ altaok }}</strong></h3>
+	<form method="post" action="{{ url_for ('altaatenciones') }}">
+		<div class="form-group">
+			<label for="nombre"></label>
+			<input id="nombre" class="form-control" size="45" type="text" name="nombre" placeholder="Nombre del médico" value="" required>
+		</div>
+
+		<div class="form-group">
+			<label for="especialidad"></label>
+			<input id="especialidad" class="form-control" size="45" type="text" name="especialidad" placeholder="Especialidad" value="" required>
+		</div>
+
+		<div class="form-group">
+			<label for="policlinica"></label>
+			<input size="45" type="text" class="form-control" id="policlinica" name="policlinica" placeholder="Policlínica de Atención" required>
+		</div>
+
+		<div class="form-group">
+			<label for="fecha"></label>
+			<input size="45" type="date" class="form-control" id="fecha" name="fecha" placeholder="Fecha de Atención" required>
+		</div>
+
+		<div class="form-group">
+			<label for="horario"></label>
+			<input size="45" type="time" class="form-control" id="exampleInputPassword1" name="horario" placeholder="Horario de Atención" required>
+		</div>
+
+		<div>
+			<input type="submit" class="button" value="Publicar">
+		</div>
+
+		<div>
+			<a class="button" href="infousuario" role="button">Volver</a>
+		</div>
+	</form>
+
+	{% else %}
+	<div class="encabezados">
+		<h1> Sección para Administradores </h1>
+		<h3> Este espacio es exclusivo para usuarios Administradores </h3>
+	</div>
+	<br>
+	<a class="button" href="home" role="button">Ir a la página principal</a>
+
+	{% endif %}
+
+{% endblock %}

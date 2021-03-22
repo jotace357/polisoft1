@@ -1,0 +1,36 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+
+		<div class="encabezados">
+			<h1>Darme de baja del Sistema</h1>
+			<h3>Debe ingresar su contraseña para darse de baja del Sistema</h3>
+		</div>
+
+		<form method="post" action="{{ url_for ('eliminar') }}">
+			<div class="form-group">
+				<label for="exampleInputPassword1"></label>
+				<input type="password" class="form-control" id="exampleInputPassword1" name="pass" placeholder= "contraseña" required>
+			</div>
+			<p style="color:hsl(0,100%,50%);">{{ delerror }}</p>
+
+			<div>
+				<input type="submit" class="button" value="Eliminar mi Usuario">
+			</div>
+			<div>
+				<a class="button" href="servicios">Volver a Servicios</a>
+			</div>
+		</form>
+
+	</body>
+</html>
+
+{% endblock %}

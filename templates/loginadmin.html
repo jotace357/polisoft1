@@ -1,0 +1,41 @@
+{% extends "layout.html" %}
+
+{% block content %}
+	<head>
+		<title> Inicio de Sesión Administradores </title>
+	</head>
+	<body>
+		{% if not is_login_adm and not is_login %}
+		<div class="encabezados">
+			<h1>Para Iniciar Sesión como Administrador ingresa tu documento y contraseña.</h1>
+		</div>
+		<form method="post" action="{{ url_for ('loginadmin') }}">
+
+			<div class="form-group">
+				<label for="cedula"></label>
+				<input type="text" class="form-control" id="cedula" name="admdni" placeholder=" Numero de documento" required>
+			</div>
+
+			<div class="form-group">
+				<label for="contraseña"></label>
+				<input type="password" class="form-control" id="contraseña" name="admcontraseña" placeholder=" Contraseña" required>
+			</div>
+
+			<p style="color:hsl(0,100%,50%);">{{ msgerroradm }}</p>
+
+			<div>
+				<input type="submit" class="button" value="INGRESAR">
+			</div>
+
+			<div>
+				<a class="button" href="home" role="button">Volver a la página principal</a>
+			</div>
+
+		</form>
+		{% endif %}
+		{% if is_login_adm %}
+			<h1> En este momento está logueado en el sistema como Administrador </h1>
+			<a class="button" href="infousuario" role="button">Volver</a>
+		{% endif %}
+	</body>
+{% endblock %}

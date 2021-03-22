@@ -1,0 +1,27 @@
+{% extends "layout.html" %}
+
+
+
+{% block content %}
+
+		<div class="divatenciones" id="divatenciones">
+		<table class="sortable" id="tblData">
+		<thead>
+		<tr>
+			<th> Número </th>
+			<th> Nombre </th>
+		</tr>
+		</thead>
+		<tbody>
+		<tr>
+		{% for i in list %}
+				<td>{{ i.numturnos }}</td>
+				<td>{{ i.owner.username }} {{ i.owner.lastname }}</td>
+		</tr>
+		{% endfor %}
+		</tbody>
+		</table>
+		<div>
+		
+<a class="button" href="/infoatenciones">Volver</a>
+{% endblock %}

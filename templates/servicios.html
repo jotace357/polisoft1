@@ -1,0 +1,40 @@
+{% extends "layout.html" %}
+
+{% block content %}
+	<head>
+		<title>Servicios</title>
+	</head>
+	{% if is_login and not is_login_adm %}
+	<div class="azul">
+		<h1> Bienvenido/a: {{session["username"]}} </h1>
+	{% else %}
+	<div class="encabezados">
+		<h3>Si desea hacer uso de los servicios, por favor ingrese con su cuenta.</h3>
+		<h3>Si no tiene una cuenta en el sistema, puede registrarse en la sección -Registro de Usuario-</h3>
+	</div>
+
+	{% endif %}
+
+	{% if is_login and not is_login_adm %}
+	</div>
+	<br>
+	{% endif%}
+	<div class="encabezados">
+		<h1>Servicios</h1>
+		<h3>Aqui usted podrá reservar su turno, cancelarlo y editar su información personal</h3>
+	</div>
+
+
+	<h1><strong style="color:hsl(210, 29%, 21%);">{{ msgdel}}</strong></h1>
+
+
+	{% if is_login and not is_login_adm %}
+	<div class="">
+		<a class="button" href="reservas" role="button">Agendar mi consulta médica</a>
+		<a class="button" href="cancelar" role="button">Cancelar mi consulta médica</a>
+		<a class="button" href="/editar">Actualizar mis datos personales</a>
+		<a class="button" href="/eliminar">Eliminar mi Usuario</a>
+		<a class="button" href="/cerrar_sesion">Cerrar Sesión</a>
+	</div>
+	{% endif %}
+{% endblock %}

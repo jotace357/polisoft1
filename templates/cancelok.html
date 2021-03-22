@@ -1,0 +1,23 @@
+{% extends "layout.html" %}
+{% block content %}
+
+<title>Cancelación</title>
+	<div class="encabezados">
+		<h1>Reserva Cancelada</h1>
+		</div>
+<br>
+<br>
+
+<h1 style="color:black;">Señor/a: {{session["username"]}}</h1>
+<div class="divatenciones" id="divatenciones">
+	<table>
+		<thead>
+			<p style="color:black;">{{msg}}</p>
+	</thead>
+		</table>
+</div>
+
+<a class="button" href="/reservas">Ir a Reservas</a>
+<a class="button" href="/servicios">Ir a Servicios</a>
+
+{% endblock %}

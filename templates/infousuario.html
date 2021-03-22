@@ -1,0 +1,24 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+	<title> Ingreso de Información </title>
+
+	{% if is_login_adm %}
+	<h1> Administrador: {{session["admname"]}} </h1>
+	<a class="button" href="altaatenciones">Ingreso de Turnos</a>
+	<a class="button" href="atenciones">Ver Turnos Ingresados</a>
+	<a class="button" href="infoatenciones">Ver Reservas de Usuarios</a>
+	<a class="button" href="gestionadmin">Gestión de Administradores</a>
+	<a class="button" href="/cerrar_sesion_admin">Cerrar Sesión</a>
+
+	{% else %}
+	<div class="encabezados">
+		<h1> Sección para administradores </h1>
+		<h3> Este sitio es exclusivo para usuarios Administradores </h3>
+	</div>
+	<br>
+	<a class="button" href="/home">Ir a página principal</a>
+	{% endif %}
+
+{% endblock %}

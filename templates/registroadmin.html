@@ -1,0 +1,55 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+	<head>
+		<title> Registro de Administradores </title>
+	</head>
+
+	<body>
+
+		<div class="encabezados">
+			<h1>Por favor, complete los siguientes campos.</h1>
+			<h3>Después de completar el registro, podrá iniciar sesión con su número de documento y la contraseña que usted haya elegido.</h2>
+		</div>
+
+		<form method="post" action="{{ url_for ('registroadmin') }}">
+			<div class="form-group">
+				<label for="ingreso nombres"></label>
+				<input type="text" class="form-control" id="nombres" name="admnames" placeholder="Nombres" required>
+			</div>
+
+			<div class="form-group">
+				<label for="ingreso apellidos"></label>
+				<input type="text" class="form-control" id="apellidos" name="admlastnames" placeholder="Apellidos " required>
+			</div>
+
+			<div class="form-group">
+				<label for="ci"></label>
+				<input type="text" class="form-control" id="ci" name="admcedula" placeholder="C.I sin puntos ni guiones" required>
+			</div>
+
+			<div class="form-group">
+				<label for="exampleInputPassword1"></label>
+				<input type="password" class="form-control" id="exampleInputPassword1" name="admcontraseña" placeholder="Contraseña" required>
+			</div>
+
+			<div class="form-group">
+				<label for="exampleInputPassword1"></label>
+				<input type="password" class="form-control" id="exampleInputPassword1" name="confadmcontraseña" placeholder="Confirme su contraseña" required>
+			</div>
+
+			<p style="color:hsl(0,100%,50%);"> {{ regaderror }} </p>
+
+			<input type="submit" class="button" value="Crear Administrador">
+
+			<a class="button" href="infousuario" role="button">Volver</a>
+
+		</form>
+	</body>
+</html>
+
+
+{% endblock %}

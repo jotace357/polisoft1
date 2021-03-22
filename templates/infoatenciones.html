@@ -1,0 +1,57 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<script type="text/javascript" src="static/sorttable.js"></script>
+<script src="static/sorttable.js"></script>
+<script type="text/javascript" src="static/exporttable.js"></script>
+<script src="static/exporttable.js"></script>
+<script type="text/javascript" src="jquery-3.5.0.js"></script>
+<script src="jquery-3.5.0.js"></script>
+
+<title>Atenciones Reservadas</title>
+<div class="encabezados">
+	<h1>Atenciones Reservadas</h1>
+	<h3>Aquí se detallan las Atenciones Reservadas</h3>
+</div>
+
+<br>
+<br>
+
+{% if is_login_adm %}
+
+<div class="divatenciones" id="divatenciones">
+	<table class="sortable2" id="tblData2">
+		<thead>
+			<tr>
+				<th>Atenciones Reservadas</th>
+			</tr>
+		</thead>
+		<tbody>
+			<form method="post" action="{{url_for ('infoatenciones')}}">
+			{% for at in listados %}
+				<tr>
+					<td>
+						<a>{{at.policlinica}} | {{at.nombre}} | {{at.especialidad}} | {{at.fecha}} | {{at.horario}}</a>
+					</td>
+					<td>
+						<input type="submit" name="listado" value="{{at.id}}">
+					</td>
+				</tr>
+			{% endfor %}
+			</form>
+		</tbody>
+	</table>
+<br>
+<br>
+	<table>
+			<a class="button3" href="" onclick="exportTableToExcel('tblData')" role="button">Exportar</a>
+			<a class="button3" href="" onclick="printDiv()" role="button">Imprimir</a>
+	</table>
+</div>
+	<a class="button" href="/infousuario">Volver</a>
+
+{% else %}
+	<h3> PARA ACCEDER A ESTA SECCIÓN DEBE SER ADMINISTRADOR </h3>
+	<a class="button" href="/home">Volver</a>
+{% endif %}
+{% endblock %}

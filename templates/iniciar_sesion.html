@@ -1,0 +1,42 @@
+{% extends "layout.html" %}
+
+{% block content %}
+	<head>
+		  <title>Iniciar Sesión</title>
+    </head>
+    <body>
+		{% if not is_login and not is_login_adm %}
+		<div class="encabezados">
+  		  <h1>Para Iniciar Sesión ingresa tu documento y contraseña.</h1>
+		</div>
+
+		<form method="post" action="{{ url_for ('iniciar_sesion')}}">
+			<div class="form-group">
+				<label for="exampleInputEmail1"></label>
+				<input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="dni_init" placeholder="Numero de documento" required>
+			</div>
+
+			<div class="form-group">
+				<label for="exampleInputPassword1"></label>
+				<input type="password" class="form-control" id="exampleInputPassword1" name="contraseña_init" placeholder="Contraseña" required>
+				<small id="emailHelp" class="form-text text-muted"></small>
+			</div>
+
+			<p style="color:hsl(0,100%,50%);">{{ msgerror }}</p>
+
+			<div>
+				<input type="submit" class="button" value="Iniciar Sesión">
+			</div>
+
+			<div>
+				 <a class="button" href="home" role="button">Volver a la página principal</a>
+			 </div>
+
+		</form>
+		{% endif %}
+		{% if is_login and not is_login_adm %}
+		<h3> En este momento está logueado en el sistema</h3>
+		<a class="button" href="servicios" role="button">Volver a Servicios</a>
+		{%endif%}
+	  </body>
+{% endblock %}

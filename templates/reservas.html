@@ -1,0 +1,50 @@
+{% extends "layout.html" %}
+
+{% block content %}
+    <title>Reservas</title>
+
+	<div class="encabezados">
+		<h1>Reservas</h1>
+		<h3>Aqui podrá seleccionar Médico, Policlínica, Fecha y Hora disponibles para ser atendido</h3>
+	</div>
+
+	<h4> Elija una atención y saque turno</h4>
+
+	<h3 style="color:hsl(0,100%,50%);"><strong>{{ msg_cupos }}</strong></h3>
+	<h3 style="color:hsl(145, 63%, 49%);"><strong>{{ goturn }}</strong></h3>
+
+  <div class="form-uno">
+    <form method="post" action="{{url_for ('reservas')}}">
+		  <select name="okturno" method="post">
+			  {% for i in servdisp %}
+				  <option value="{{i.id}}">{{i.policlinica}} / {{i.especialidad}} / {{i.nombre}} / {{i.fecha}} / {{i.horario}}</option>
+			  {% endfor %}
+		  </select>
+		  <input type="submit" class="button" id="turn" name="dataturno" value="Reservar Turno">
+	  </form>
+  {{ turnexist }}
+  </div>
+  <a class="button" href="/cancelar"> Cancelar Reserva</a>
+  <a class="button" href="/servicios"> Volver a Servicios </a>
+	<br>
+
+	<a class="button" href="/reservas">Actualizar</a>
+
+	<div class="divatenciones" id="divatenciones">
+	<table class="sortable" id="tblData">
+	<thead>
+	<tr>
+		<th> Reservas realizadas  - {{session["username"]}} </th>
+	</tr>
+	</thead>
+	<tbody>
+	<tr>
+	{% for i in uuser %}
+			<td>{{i.services.policlinica}} / {{i.services.nombre}} / {{i.services.especialidad}} / {{i.services.fecha}} / {{i.services.horario}} / {{i.numturnos}}</td>
+	</tr>
+	{% endfor %}
+	</tbody>
+	</table>
+	</div>
+
+{% endblock %}

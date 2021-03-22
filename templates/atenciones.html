@@ -1,0 +1,59 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<script type="text/javascript" src="static/sorttable.js"></script>
+<script src="static/sorttable.js"></script>
+<script type="text/javascript" src="static/exporttable.js"></script>
+<script src="static/exporttable.js"></script>
+<script type="text/javascript" src="jquery-3.5.0.js"></script>
+<script src="jquery-3.5.0.js"></script>
+
+	<title>Atenciones</title>
+	<div class="encabezados">
+		<h1>Atenciones</h1>
+		<h3>Aquí se detallan las Atenciones cargadas</h3>
+	</div>
+<br>
+<br>
+
+{% if is_login %}
+		<div class="divatenciones" id="divatenciones">
+		<table class="sortable" id="tblData">
+		<thead>
+		<tr>
+		    <th>Profesional</th>
+			<th>Especialidad</th>
+		    <th>Policlínica</th>
+			<th>Fecha</th>
+		    <th>Horario</th>
+		</tr>
+		</thead>
+	    <tbody>
+		<tr>
+		{% for i in listservis %}
+				<td> {{ i.nombre }} </td>
+				<td> {{ i.especialidad }} </td>
+	 	 		<td> {{ i.policlinica }} </td>
+	 	 		<td> {{ i.fecha }} </td>
+	 	 		<td> {{ i.horario }} </td>
+		</tr>
+		{% endfor %}
+		</tbody>
+		</table>
+		<table>
+			<a class="button3" href="" onclick="exportTableToExcel('tblData')" role="button">Exportar</a>
+			<a class="button3" href="" onclick="printDiv()" role="button">Imprimir</a>
+		</table>
+	</div>
+	<a class="button" href="infousuario" role="button">Volver</a>
+
+{% else%}
+	<div class="encabezados">
+		<h3> Si desea visualizar las atenciones disponibles, por favor ingrese como usuario.</h3>
+		<h3> Si no esta registrado en el sistema, puede registrarse en la sección -Registro de Usuario-</h3>
+	</div>
+	<br>
+	<a class="button" href="home" role="button">Volver a la página principal</a>
+
+{% endif %}
+{% endblock %}

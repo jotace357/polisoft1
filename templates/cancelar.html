@@ -1,0 +1,46 @@
+{% extends "layout.html" %}
+{% block content %}
+
+<script>
+	var botonradio = document.getElementById("botonradio")
+	botonradio.onclik = function(){var boton_input = document.formbuton.radiob;}
+</script>
+
+
+	<title>Atenciones Reservadas</title>
+	<div class="encabezados">
+		<h1>Atenciones Reservadas</h1>
+		<h3>Aquí se detallan las Atenciones Reservadas</h3>
+	</div>
+<br>
+<br>
+	<div class="divnuevo" id="divnuevo">
+				<table class="sortable3" id="tblData3">
+					<tr>
+						<td>
+						<div class="divnuevo1">
+						<form id="formcancel" method="post" name="formbuton" action="{{ url_for ('cancelar')}}">
+						{% for i in uuser %}
+						<input type="radio" name="radiob" id="radiobot" value="{{i.id}}">
+						{% endfor %}
+						</div>
+						</td>
+						<td>
+						<div class="divnuevo2">
+						{% for i in data %}
+						{{i.services.policlinica}} | {{i.services.nombre}} | {{i.services.especialidad}} | {{i.services.fecha}} | {{i.services.horario}} | {{i.numturnos}} <br>
+						{% endfor %}
+
+						</div>
+						</td>
+					</tr>
+				</table>
+	</div>
+	<input type="submit" class="button" id="botonradio" value="Cancelar reserva">
+
+	
+	<a class="button" href="/reservas">Ir a Reservas</a>
+	<a class="button" href="/servicios">Volver a Servicios</a>
+
+
+{% endblock %}
